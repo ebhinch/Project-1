@@ -11,12 +11,12 @@ h2{
     font-size: 18px;
 }
 
-main{
-
-    padding: 10px;
+.deal-button {
+    text-align: center;
+    margin-top: 10px;
 }
 
-#birthday-verification{
+main, #birthday-verification {
     padding: 10px;
 }
 
@@ -31,16 +31,6 @@ footer {
     margin-bottom: 95px;
 }
 
-.game {
-    padding: 25px;
-}
-
-.game-start {
-    text-align: center;
-    padding: 20px;
-}
-
 .game-play {
-    padding: 10px;
+    margin-top: 20px;
 }
-
