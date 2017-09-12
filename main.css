@@ -1,6 +1,7 @@
-h1, h2, h3, footer {
+h1, h2, h3 {
     text-align: center;
     font-family: "Palatino", Georgia, Serif;
+    font-weight: bold;
 }
 
 h1{
@@ -15,17 +16,19 @@ h3 {
     font-size: 14px;
 }
 
-.deal-button, #new-game-button {
+h4 {
+    text-align: left;
+    padding-left: 10px;
+    
+}
+
+.deal-button {
     text-align: center;
     margin-top: 10px;
 }
 
-main, #birthday-verification {
+main {
     padding: 10px;
-}
-
-.birthday-form {
-    text-align: center;
 }
 
 footer {
@@ -33,8 +36,24 @@ footer {
     margin-right: 40px;
     margin-top: 10px;
     margin-bottom: 95px;
+    font-size: 18px;
+    font-family: "Palatino", Georgia, Serif;
+    text-align: center;
+
 }
 
 .game-play {
     margin-top: 20px;
+}
+
+.jumbotron{
+    height: 400px;
+    background-color: green;
+    margin: 10px;
+}
+
+#btn{
+  padding: 10px;
+  margin: 5px;
+  height: 40px;
 }

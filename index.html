@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- link CSS -->
-    <link rel="stylesheet" href="main.css">
+    <title>Brooks' Blackjack</title>
+
     <!-- link JS -->
     <script src='game.js'></script>
+
+    <!-- link bootstrap code -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
@@ -27,39 +39,40 @@
                 <button id = "birthday-button">Enter</button>
             </form>
         </div> -->
-        
+
         <!-- create deal button-->
-        <div class = "deal-button">
-            <input type = "button" value = "DEAL">
+        <div class="deal-button">
+            <input type = "button" class = "deal-button" value="DEAL">
         </div>
-
-        <!-- create hit and stay buttons -->
-        <div class = "game-play">
-                <input type = "button" class = "btn" value = "HIT">
-                <input type = "button" class = "btn" value = "STAY">
-        </div>
-
-        <!-- create div for game table that cards will appear on -->
-        <!-- FLUSH THIS OUT -->
-        <div id = "game-table"></div>
 
     </main>
+
     <hr>
 
-    <!-- create real links -->
-    <footer id = "footer-id">
-        <br>
-        <a href="https://www.facebook.com">Facebook</a>
-        <a href="https://www.instagram.com">Instagram</a>
-        <a href="https://www.twitter.com">Twitter</a>
+    <!-- create dealer game board -->
+    <div class="jumbotron" id="dealer-jumbotron">
+        <h4>DEALER</h4>
+    </div>
+
+    <!-- create player game board -->
+    <div class="jumbotron" id="player-jumbotron">
+
+        <!-- create hit and stay buttons -->
+        <div class="game-play">
+            <h4>PLAYER</h4>
+            <input type="button" id="btn" value="HIT">
+            <input type="button" id="btn" value="STAY">
+        </div>
+    </div>
+
+    <!-- create footer -->
+    <footer id="footer-id">
+        <hr>
+        <a href="http://www.bicyclecards.com/how-to-play/blackjack/">Brush up on your Blackjack strategy!</a>
     </footer>
 
 
     <!-- add in jquery script -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
 </body>
-</html>
-
-
-
-  
