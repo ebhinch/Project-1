@@ -50,9 +50,10 @@ $(() => {
 
                 //push value, suit and points to an array now comprising entire deck of cards
                 let card = {
-                    value: values[i], 
-                    suit: suits[j], 
-                    points: points };
+                    value: values[i],
+                    suit: suits[j],
+                    points: points
+                };
                 deck.push(card);
                 console.log(i);
             }
@@ -67,7 +68,7 @@ $(() => {
         console.log("Deck length: " + deck.length)
         for (let i = 0; i < 1000; i++) {
             //set location of first card
-            
+
             let location1 = Math.floor((Math.random() * deck.length));
 
             //set location of second card
@@ -88,25 +89,27 @@ $(() => {
     let cardsDealtPlayer = [];
     let cardsDealtDealer = [];
     function establishPlayers(numberOfPlayers) {
-      
+
         //assign each player either "player 1" or "player 2" and save cards currently in hand to array
         for (let i = 0; i <= numberOfPlayers; i++) {
 
             //set "player 1" to always be player
             if (i === 0) {
-                let player = { 
-                    name: "Player", 
-                    points: 0, 
-                    hand: cardsDealtPlayer }
+                let player = {
+                    name: "Player",
+                    points: 0,
+                    hand: cardsDealtPlayer
+                }
                 cardsDealtPlayer.push(player);
             }
 
             //set "player 2" to always be dealer
             else {
-                let player = { 
-                    name: "Dealer", 
-                    points: 0, 
-                    hand: cardsDealtDealer };
+                let player = {
+                    name: "Dealer",
+                    points: 0,
+                    hand: cardsDealtDealer
+                };
                 cardsDealtDealer.push(player);
             }
         }
@@ -115,6 +118,8 @@ $(() => {
     // USER INTERFACE PORTION OF CODE
 
     //1. Deal cards
+    let dealerPointTotal;
+    let playerPointTotal;
 
     //add event listener - when "deal" is clicked, create deck, shuffle cards, and then deal cards
     $("#deal-button").on("click", ($event) => {
@@ -122,7 +127,7 @@ $(() => {
         createDeck();
         shuffleCards(deck);
         console.log(deck);
-        for (let i = 0; i < 2; i++) { 
+        for (let i = 0; i < 2; i++) {
             cardsDealtPlayer.push(deck[0]);
             deck.shift();
             cardsDealtDealer.push(deck[0]);
@@ -130,39 +135,56 @@ $(() => {
         }
         console.log(cardsDealtDealer);
         console.log(cardsDealtPlayer);
-        console.log(cardsDealtDealer[0].points);
 
         //sum points dealt
-        let dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
-        let playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
+        dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
+        playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
         console.log(dealerPointTotal);
         console.log(playerPointTotal);
 
     })
 
+    // 2. Sum cards dealt
 
-    
+    //3. Add event listener to "Hit"
+    $("#hit-button").on("click", ($event) => {
+        $event.stopPropagation();
+        cardsDealtPlayer.push(deck[0]);
+        deck.shift();
+        console.log(cardsDealtPlayer);
+    })
 
-    
+    //4. Add event listener to "Stay"
+    $("#stay-button").on("click", ($event) => {
+        $event.stopPropagation();
+        console.log(cardsDealtPlayer);
+    })
 
-    //8. Score players' hands
-    // var arr = ["20.0","40.1","80.2","400.3"],
-    // sum = 0;
-    // $.each(arr,function(){sum+=parseFloat(this) || 0;});
+    //5. program dealer to "hit"
+
+    //6. program dealer to "stay"
 
 
+    // 4. Determine whether to "hit" or "stay"
+    //for player
+    if (playerPointTotal <= 11) {
+        //hit
+    }
 
-    // <script>
-    // var numbers = [15.5, 2.3, 1.1, 4.7];
+    else if (playerPointTotal >= 17) {
+        //stay
+    }
 
-    // function getSum(total, num) {
-    //     return total + Math.round(num);
-    // }
-    // function myFunction(item) {
-    //     document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
-    // }
-    // </script>
+    //for dealer
+    if (dealerPointTotal <= 11) {
+        //hit
+    }
+    else if (dealerPointTotal >= 17) {
+        //stay
+    }
 
+
+    //4. evaluate winner 
 
 
     //alert player has won
