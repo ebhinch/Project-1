@@ -23,7 +23,6 @@ $(() => {
     let deck = [];
 
     //4. Create deck function creates a card deck and assigns each card a suit, value and points
-    //assigns all aces "11"
 
     function createDeck() {
         //create one array where cards' values will live (1, 2, Q, K...)
@@ -54,6 +53,7 @@ $(() => {
                     suit: suits[j],
                     points: points
                 };
+
                 deck.push(card);
                 console.log(i);
             }
@@ -65,10 +65,11 @@ $(() => {
 
         //switch cards between one location and another
         //use Math.floor to find random indexes within deck array. Math.floor will generate a number between 0 and 1 (not including 1)
+
         console.log("Deck length: " + deck.length)
+        
         for (let i = 0; i < 1000; i++) {
             //set location of first card
-
             let location1 = Math.floor((Math.random() * deck.length));
 
             //set location of second card
@@ -78,7 +79,7 @@ $(() => {
             let shuffledLocation = deck[location1];
             deck[location1] = deck[location2];
             deck[location2] = shuffledLocation;
-            // console.log(deck[location1]);
+
         }
     }
 
@@ -160,31 +161,19 @@ $(() => {
         console.log(cardsDealtPlayer);
     })
 
-    //5. program dealer to "hit"
-
-    //6. program dealer to "stay"
 
 
-    // 4. Determine whether to "hit" or "stay"
-    //for player
-    if (playerPointTotal <= 11) {
-        //hit
-    }
-
-    else if (playerPointTotal >= 17) {
-        //stay
-    }
-
-    //for dealer
+    // 5 and 6. Determine whether dealer will "hit" or "stay"
+   
     if (dealerPointTotal <= 11) {
         //hit
     }
+
     else if (dealerPointTotal >= 17) {
         //stay
     }
 
-
-    //4. evaluate winner 
+    //7. evaluate winner 
 
 
     //alert player has won
