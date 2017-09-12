@@ -15,11 +15,33 @@
     <h3> Please verify your birthday below. Players must be at last 21 years of age to play.</h3>
 
     <main>
-        <section id="birthday-verification"></section>
-    </main>
+        <!-- create id and class for birthday form -->
+        <section id = "birthday-verification">
+            <form class = "birthday-form">
+                <input type = "date" name = "birthday">
+                <button id = "birthday-button">Enter</button>
+            </form>
+        </section>
+        
+        <!-- create deal button-->
+        <div class = "game-start">
+            <input type = "button" id = "deal-button" value = "DEAL">
+        </div>
 
+        <!-- create hit and stay buttons -->
+        <div class = "game-play">
+                <input type = "button" class = "btn" value = "HIT">
+                <input type = "button" class = "btn" value = "STAY">
+        </div>
+
+        <!-- create div for game table that cards will appear on -->
+        <div id = "game-table"></div>
+
+    </main>
+    <hr>
+
+    <!-- create real links -->
     <footer>
-        <hr>
         <a href="www.facebook.com">Facebook</a>
         <a href="www.instagram.com">Instagram</a>
         <a href="www.twitter.com">Twitter</a>

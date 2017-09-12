@@ -1,5 +1,26 @@
-h1 {text-align: center}
+h1, h3, footer {
+    text-align: center;
+    font-family: "Palatino", Georgia, Serif;
 
-h3 {text-align: center}
+}
 
-footer {text-align: center}
+.birthday-form {
+    text-align: center;
+}
+
+footer{
+    padding-top: 25px;
+}
+
+.game {
+    padding: 25px;
+}
+
+.game-start {
+    text-align: center;
+    padding: 10px;
+}
+
+.game-play {
+    padding: 10px;
+}
