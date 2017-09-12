@@ -39,7 +39,7 @@ $(() => {
                 }
 
                 //set ace to 11 points
-                if (values[i] === "A") {
+                else if (values[i] === "A") {
                     points = 11;
                 }
 
@@ -49,7 +49,10 @@ $(() => {
                 };
 
                 //push value, suit and points to an array now comprising entire deck of cards
-                let card = { Value: values[i], Suit: suits[j], Points: points };
+                let card = {
+                    value: values[i], 
+                    suit: suits[j], 
+                    points: points };
                 deck.push(card);
                 console.log(i);
             }
@@ -82,22 +85,29 @@ $(() => {
 
     //create player array to save player ID and track respective player score and cards currently dealt
 
+    let cardsDealtPlayer = [];
+    let cardsDealtDealer = [];
     function establishPlayers(numberOfPlayers) {
-        let playerDataArray = [];
+      
         //assign each player either "player 1" or "player 2" and save cards currently in hand to array
         for (let i = 0; i <= numberOfPlayers; i++) {
-            let cardsDealt = [];
 
             //set "player 1" to always be player
             if (i === 0) {
-                let player = { Name: "Player", Points: 0, Hand: cardsDealt }
-                playerDataArray.push(player);
+                let player = { 
+                    name: "Player", 
+                    points: 0, 
+                    hand: cardsDealtPlayer }
+                cardsDealtPlayer.push(player);
             }
 
             //set "player 2" to always be dealer
             else {
-                let player = { Name: "Dealer", Points: 0, Hand: cardsDealt };
-                playerDataArray.push(player);
+                let player = { 
+                    name: "Dealer", 
+                    points: 0, 
+                    hand: cardsDealtDealer };
+                cardsDealtDealer.push(player);
             }
         }
     }
@@ -106,17 +116,34 @@ $(() => {
 
     //1. Deal cards
 
-    //add event listener - when "deal" is clicked, deal cards
+    //add event listener - when "deal" is clicked, create deck, shuffle cards, and then deal cards
     $("#deal-button").on("click", ($event) => {
         $event.stopPropagation();
         createDeck();
         shuffleCards(deck);
         console.log(deck);
+        for (let i = 0; i < 2; i++) { 
+            cardsDealtPlayer.push(deck[0]);
+            deck.shift();
+            cardsDealtDealer.push(deck[0]);
+            deck.shift();
+        }
+        console.log(cardsDealtDealer);
+        console.log(cardsDealtPlayer);
+        console.log(cardsDealtDealer[0].points);
+
+        //sum points dealt
+        let dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
+        let playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
+        console.log(dealerPointTotal);
+        console.log(playerPointTotal);
+
     })
 
 
-// to deal use pop
+    
 
+    
 
     //8. Score players' hands
     // var arr = ["20.0","40.1","80.2","400.3"],
