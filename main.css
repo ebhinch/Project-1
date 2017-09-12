@@ -18,13 +18,12 @@ h3 {
 
 h4 {
     text-align: left;
-    padding-left: 10px;
-    
+    padding-left: 10px;    
 }
 
-.deal-button {
-    text-align: center;
-    margin-top: 10px;
+.deal-button-container {
+    display: flex;
+    justify-content: center;
 }
 
 main {
