@@ -217,7 +217,7 @@ $(() => {
         for (let i = 0; i<2; i++) {
             const cardToShow = cardsDealtPlayer[i];
             const $newCard = $("<div></div>");
-            $("#player-jumbotron").append(`<img src=${cardsDealtPlayer[i].cardImageSource}>`);
+            $("#player-jumbotron").append(`<img class="playerCard" src=${cardsDealtPlayer[i].cardImageSource}>`);
         }
     };
 
@@ -226,7 +226,7 @@ $(() => {
         for (let i = 0; i<1; i++) {
             const cardToShow = cardsDealtPlayer[i];
             const $newCard = $("<div></div>");
-            $("#player-jumbotron").append(`<img src=${cardsDealtPlayer[i].cardImageSource}>`);
+            $("#player-jumbotron").append(`<img class="playerCard" src=${cardsDealtPlayer[cardsDealtPlayer.length-1].cardImageSource}>`);
         }
     };
 
@@ -235,7 +235,7 @@ $(() => {
         for (let i = 0; i<2; i++) {
             const cardToShow = cardsDealtDealer[i];
             const $newCard = $("<div></div>");
-            $("#dealer-jumbotron").append(`<img src=${cardsDealtDealer[i].cardImageSource}>`);
+            $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[i].cardImageSource}>`);
         }
     };
 
@@ -244,7 +244,7 @@ $(() => {
         for (let i = 0; i<2; i++) {
             const cardToShow = cardsDealtDealer[i];
             const $newCard = $("<div></div>");
-            $("#dealer-jumbotron").append(`<img src=${cardsDealtDealer[i].cardImageSource}>`);
+            $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[cardsDealtDealer.length-1].cardImageSource}>`);
         }
     };
     
