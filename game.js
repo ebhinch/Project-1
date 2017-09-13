@@ -44,7 +44,8 @@ $(() => {
                 let card = {
                     value: values[i],
                     suit: suits[j],
-                    points: points
+                    points: points,
+                    cardImageSource: "PNG-cards-1.3/" + values[i]  + "_of_" + suits[j] + ".png"
                 };
 
                 deck.push(card);
