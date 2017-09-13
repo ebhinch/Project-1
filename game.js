@@ -2,7 +2,9 @@ $(() => {
     //Write a BlackJack game to try to beat the dealer. Allow the user to "Hit" or "Stand" based on their current score. Follow the common rules for BlackJack.
 
     //GAME SETUP PORTION
-
+    let cardsDealtDealer = [];
+    let cardsDealtPlayer = [];
+    let cardParameter;
 
     //1. Create card deck
     //create array of suits
@@ -77,39 +79,6 @@ $(() => {
         }
     }
 
-    //6. Create players
-
-    //create player array to save player ID and track respective player score and cards currently dealt
-
-    let cardsDealtPlayer = [];
-    let cardsDealtDealer = [];
-    function establishPlayers(numberOfPlayers) {
-
-        //assign each player either "player 1" or "player 2" and save cards currently in hand to array
-        for (let i = 0; i <= numberOfPlayers; i++) {
-
-            //set "player 1" to always be player
-            if (i === 0) {
-                let player = {
-                    name: "Player",
-                    points: 0,
-                    hand: cardsDealtPlayer
-                }
-                cardsDealtPlayer.push(player);
-            }
-
-            //set "player 2" to always be dealer
-            else {
-                let player = {
-                    name: "Dealer",
-                    points: 0,
-                    hand: cardsDealtDealer
-                };
-                cardsDealtDealer.push(player);
-            }
-        }
-    }
-
     //7. Deal Cards
     function dealCards() {
         for (let i = 0; i < 2; i++) {
@@ -123,7 +92,8 @@ $(() => {
     }
 
     //8. Sum Point Totals
-    let cardParameter;
+    // let cardParameter;
+
     // dealer
     function sumDealerPoints() {
         dealerPointTotal = cardsDealtDealer.reduce((pointTotal, cardParameter) => {
@@ -182,15 +152,19 @@ $(() => {
 
     //13. Winning Conditions
     function determineWinner() {
-        if (dealerPointTotal > 21) {
+        if (dealerPointTotal > 21 && playerPointTotal > 21) {
+            console.log("player and dealer busted");
+            alert("Uh oh. You and the dealer both busted.");
+        }
+        else if (dealerPointTotal > 21) {
             console.log("dealer busted");
             alert("Dealer has busted.")
         }
-        if (playerPointTotal > 21) {
+        else if (playerPointTotal > 21) {
             console.log("player busted");
             alert("You have busted. I'm sorry.");
         }
-        if (dealerPointTotal === 21 && playerPointTotal === 21) {
+        else if (dealerPointTotal === 21 && playerPointTotal === 21) {
             console.log("player and dealer both have 21. game tied.");
             alert("Congrats, you got 21 points, but....so did the dealer. The game's a tie.")
         }
@@ -208,7 +182,7 @@ $(() => {
         }
         else if (dealerPointTotal > playerPointTotal) {
             console.log("dealer won");
-            alert("Sorry, chickadee. The dealer betcha.");
+            alert("Sorry, chickadee. The dealer beatcha.");
 
         }
         else if (dealerPointTotal === playerPointTotal) {
@@ -217,6 +191,11 @@ $(() => {
         }
     }
 
+    //Card Image Appearance 
+    function showCard(source) {
+
+    }
+    
     // USER INTERFACE PORTION OF CODE
 
     //1. DEAL BUTTON - create deck, shuffle cards, deal cards and sum point toatl when DEAL button is clicked
@@ -229,6 +208,7 @@ $(() => {
         shuffleCards(deck);
         console.log(deck);
         dealCards();
+        //show card dealt
         sumDealerPoints();
         sumPlayerPoints();
         blackjackCheck();
@@ -238,10 +218,6 @@ $(() => {
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
         hitButton();
-
-        // cardsDealtPlayer.push(deck[0]);
-        // deck.shift();
-        // console.log(cardsDealtPlayer);
     })
 
     //3. STAY BUTTON - just console.log current hand

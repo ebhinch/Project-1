@@ -46,7 +46,7 @@ footer {
 }
 
 .jumbotron{
-    height: 400px;
+    height: 600px;
     background-color: green;
     margin: 10px;
 }
@@ -55,4 +55,9 @@ footer {
   padding: 10px;
   margin: 5px;
   height: 40px;
+}
+
+.card-image {
+    height: 200px;
+    margin: 10px;
 }
