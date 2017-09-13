@@ -4,8 +4,15 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
+
+#head-section {
+    background-image: url("https://st2.depositphotos.com/1371034/9707/v/950/depositphotos_97077682-stock-illustration-seamless-pattern-of-playing-card.jpg");
+    background-size: 400px;
+    padding: 25px;
+}
+
 h1{
-    font-size: 26px;
+    font-size: 28px;
 }
 
 h2{
@@ -24,6 +31,9 @@ h4 {
 .deal-button-container {
     display: flex;
     justify-content: center;
+    margin: 10px;
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 main {
@@ -38,7 +48,18 @@ footer {
     font-size: 18px;
     font-family: "Palatino", Georgia, Serif;
     text-align: center;
+    background-image: url("https://st2.depositphotos.com/1371034/9707/v/950/depositphotos_97077682-stock-illustration-seamless-pattern-of-playing-card.jpg");
+    background-size: 400px;
+    padding: 25px;
+}
 
+a {
+    color: black;
+    font-size: 18px;
+}
+
+a:hover {
+    color: red;
 }
 
 .game-play {
@@ -46,7 +67,7 @@ footer {
 }
 
 .jumbotron{
-    height: 500px;
+    height: 350px;
     background-color: green;
     margin: 10px;
 }
@@ -58,6 +79,6 @@ footer {
 }
 
 .playerCard, .dealerCard {
-    height: 200px;
+    height: 150px;
     margin: 10px;
 }
