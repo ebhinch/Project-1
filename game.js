@@ -48,7 +48,7 @@ $(() => {
                     value: values[i],
                     suit: suits[j],
                     points: points,
-                    cardImageSource: "PNG-cards-1.3/" + values[i]  + "_of_" + suits[j] + ".png"
+                    cardImageSource: "PNG-cards-1.3/" + values[i] + "_of_" + suits[j] + ".png"
                 };
 
                 deck.push(card);
@@ -164,7 +164,7 @@ $(() => {
             sumDealerPoints();
             console.log("These are the dealer cards " + cardsDealtDealer);
             console.log(dealerPointTotal);
-           
+
 
         }
     }
@@ -214,7 +214,7 @@ $(() => {
     //Card Image Appearance 
     //player deal button
     function showPlayerCardDeal(source) {
-        for (let i = 0; i<2; i++) {
+        for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtPlayer[i];
             const $newCard = $("<div></div>");
             $("#player-jumbotron").append(`<img class="playerCard" src=${cardsDealtPlayer[i].cardImageSource}>`);
@@ -223,16 +223,16 @@ $(() => {
 
     //player hit button 
     function showPlayerCardHit(source) {
-        for (let i = 0; i<1; i++) {
+        for (let i = 0; i < 1; i++) {
             const cardToShow = cardsDealtPlayer[i];
             const $newCard = $("<div></div>");
-            $("#player-jumbotron").append(`<img class="playerCard" src=${cardsDealtPlayer[cardsDealtPlayer.length-1].cardImageSource}>`);
+            $("#player-jumbotron").append(`<img class="playerCard" src=${cardsDealtPlayer[cardsDealtPlayer.length - 1].cardImageSource}>`);
         }
     };
 
     //dealer deal 
     function showDealerCardDeal(source) {
-        for (let i = 0; i<2; i++) {
+        for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtDealer[i];
             const $newCard = $("<div></div>");
             $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[i].cardImageSource}>`);
@@ -241,13 +241,13 @@ $(() => {
 
     //dealer hit
     function showDealerCardHit(source) {
-        for (let i = 0; i<2; i++) {
+        for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtDealer[i];
             const $newCard = $("<div></div>");
-            $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[cardsDealtDealer.length-1].cardImageSource}>`);
+            $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[cardsDealtDealer.length - 1].cardImageSource}>`);
         }
     };
-    
+
 
 
 
@@ -288,5 +288,5 @@ $(() => {
         determineWinner();
     })
 
-    //create image folder and assign a url to each card
+
 })

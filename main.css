@@ -4,7 +4,6 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-
 #head-section {
     background-image: url("https://st2.depositphotos.com/1371034/9707/v/950/depositphotos_97077682-stock-illustration-seamless-pattern-of-playing-card.jpg");
     background-size: 400px;
@@ -41,8 +40,6 @@ main {
 }
 
 footer {
-    margin-left: 40px;
-    margin-right: 40px;
     margin-top: 10px;
     margin-bottom: 95px;
     font-size: 18px;
