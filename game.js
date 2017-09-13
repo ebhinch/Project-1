@@ -139,8 +139,24 @@ $(() => {
         }, 0);
         console.log(playerPointTotal);
     }
+    
+    //9. Check for Blackjack
+    function blackjackCheck() {
+        if (playerPointTotal === 21 && dealerPointTotal === 21) {
+            console.log("player and dealer got blackjack");
+            window.alert("The game is a tie! You and the dealer both got Blackjack.")
+        }
+        else if (playerPointTotal === 21) {
+            console.log("player got blackjack");
+            window.alert("Congratulations! You have Blackjack and have beat the dealer!");
+        }
+        else if (dealerPointTotal === 21) {
+            console.log("dealer got blackjack");
+            window.alert("I'm sorry! The dealer has Blackjack. You've lost the game.")
+        }
+    }
 
-    //9. HIT button
+    //10. HIT button
     function hitButton() {
         cardsDealtPlayer.push(deck[0]);
         deck.shift();
@@ -148,12 +164,52 @@ $(() => {
         console.log(cardsDealtPlayer);
     }
 
-    //10. STAY button
+    //11. STAY button
     function stayButton() {
         console.log(cardsDealtPlayer);        
     }
 
-    //11. Dealer Turns
+    //12. Dealer Turns
+    function dealerTurns() {
+        while (dealerPointTotal < 17) {
+            cardsDealtDealer.push(deck[0]);
+            deck.shift();
+            sumDealerPoints();
+            console.log(dealerPointTotal);
+            console.log(cardsDealtDealer);
+
+        }
+    }
+
+    //13. Winning Conditions
+    //player > 21
+    //dealer > 21
+    //player = 21 blackjack
+    //dealer = 21 blackjack
+    //player > dealer - player wins
+    //dealer > player - dealer wins
+
+    function determineWinner() {
+        if (dealerPointTotal > 21) {
+            console.log("dealer busted");
+        }
+        if (playerPointTotal > 21) {
+            console.log("player busted");
+        }
+        if (dealerPointTotal === 21) {
+            console.log("dealer has blackjack");
+        }
+        if (playerPointTotal === 21) {
+            console.log("player has blackjack");
+        }
+        if (playerPointTotal > dealerPointTotal) {
+            console.log("player won");
+        }
+        if (dealerPointTotal > playerPointTotal) {
+            console.log("dealer won");
+        }
+    }
+
 
     // USER INTERFACE PORTION OF CODE
 
@@ -169,6 +225,7 @@ $(() => {
         dealCards();
         sumDealerPoints();
         sumPlayerPoints();
+        blackjackCheck();
     })
 
     //2. HIT BUTTON - deal another card 
@@ -185,27 +242,10 @@ $(() => {
     $("#stay-button").on("click", ($event) => {
         $event.stopPropagation();
         stayButton();
+        dealerTurns();
         // add in dealer's turns
     })
 
-    //4. DEALER HIT / STAY LOGIC
-   
-    if (dealerPointTotal <= 11) {
-        //hit
-    }
-
-    else if (dealerPointTotal >= 17) {
-        //stay
-    }
-
-    //5. EVALUATE WINNER
-
-
-    //alert player has won
-    // window.alert("Congratulations, Player! You have won Blackjack");
-
-    // alert dealer has won
-    // window.alert("I'm sorry, Player. The dealer has won this round of Blackjack.");
 
     //create image folder and assign a url to each card
 
