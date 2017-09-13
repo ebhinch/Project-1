@@ -190,23 +190,26 @@ $(() => {
     //dealer > player - dealer wins
 
     function determineWinner() {
-        if (dealerPointTotal > 21) {
-            console.log("dealer busted");
-        }
-        if (playerPointTotal > 21) {
-            console.log("player busted");
-        }
         if (dealerPointTotal === 21) {
             console.log("dealer has blackjack");
         }
         if (playerPointTotal === 21) {
             console.log("player has blackjack");
         }
+        if (dealerPointTotal > 21) {
+            console.log("dealer busted");
+        }
+        if (playerPointTotal > 21) {
+            console.log("player busted");
+        }
         if (playerPointTotal > dealerPointTotal) {
             console.log("player won");
         }
         if (dealerPointTotal > playerPointTotal) {
             console.log("dealer won");
+        }
+        if (dealerPointTotal === playerPointTotal) {
+            console.log("dealer and player tied");
         }
     }
 
@@ -243,7 +246,7 @@ $(() => {
         $event.stopPropagation();
         stayButton();
         dealerTurns();
-        // add in dealer's turns
+        determineWinner();
     })
 
 
