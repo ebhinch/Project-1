@@ -160,9 +160,11 @@ $(() => {
         while (dealerPointTotal < 17) {
             cardsDealtDealer.push(deck[0]);
             deck.shift();
+            showDealerCardHit();
             sumDealerPoints();
+            console.log("These are the dealer cards " + cardsDealtDealer);
             console.log(dealerPointTotal);
-            console.log(cardsDealtDealer);
+           
 
         }
     }
@@ -210,13 +212,44 @@ $(() => {
     }
 
     //Card Image Appearance 
-    function showPlayerCard(source) {
+    //player deal button
+    function showPlayerCardDeal(source) {
         for (let i = 0; i<2; i++) {
-            const cardToShow = deck[i];
+            const cardToShow = cardsDealtPlayer[i];
             const $newCard = $("<div></div>");
-            $("#player-jumbotron").append(`<img src=${deck[i].cardImageSource}>`);
+            $("#player-jumbotron").append(`<img src=${cardsDealtPlayer[i].cardImageSource}>`);
         }
     };
+
+    //player hit button 
+    function showPlayerCardHit(source) {
+        for (let i = 0; i<1; i++) {
+            const cardToShow = cardsDealtPlayer[i];
+            const $newCard = $("<div></div>");
+            $("#player-jumbotron").append(`<img src=${cardsDealtPlayer[i].cardImageSource}>`);
+        }
+    };
+
+    //dealer deal 
+    function showDealerCardDeal(source) {
+        for (let i = 0; i<2; i++) {
+            const cardToShow = cardsDealtDealer[i];
+            const $newCard = $("<div></div>");
+            $("#dealer-jumbotron").append(`<img src=${cardsDealtDealer[i].cardImageSource}>`);
+        }
+    };
+
+    //dealer hit
+    function showDealerCardHit(source) {
+        for (let i = 0; i<2; i++) {
+            const cardToShow = cardsDealtDealer[i];
+            const $newCard = $("<div></div>");
+            $("#dealer-jumbotron").append(`<img src=${cardsDealtDealer[i].cardImageSource}>`);
+        }
+    };
+    
+
+
 
     // USER INTERFACE PORTION OF CODE
 
@@ -231,9 +264,9 @@ $(() => {
         shuffleCards(deck);
         console.log(deck);
         dealCards();
-        showPlayerCard();
+        showPlayerCardDeal();
         sumPlayerPoints();
-        // showDealerCard();
+        showDealerCardDeal();
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
@@ -243,7 +276,7 @@ $(() => {
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
         hitButton();
-        showPlayerCard();
+        showPlayerCardHit();
         // showDealerCard();
     })
 
