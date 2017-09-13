@@ -83,6 +83,7 @@ $(() => {
         }
     }
 
+
     //6. Create players
 
     //create player array to save player ID and track respective player score and cards currently dealt
@@ -116,6 +117,27 @@ $(() => {
         }
     }
 
+    //7. Deal Cards
+    function dealCards()  {
+        for (let i = 0; i < 2; i++) {
+            cardsDealtPlayer.push(deck[0]);
+            deck.shift();
+            cardsDealtDealer.push(deck[0]);
+            deck.shift();
+        }
+        console.log(cardsDealtDealer);
+        console.log(cardsDealtPlayer);
+    }
+
+    //8. Sum Point Totals
+    function sumPoints() {
+        dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
+        playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
+        console.log(dealerPointTotal);
+        console.log(playerPointTotal);
+    }
+
+
     // USER INTERFACE PORTION OF CODE
 
     //1. Deal cards
@@ -128,24 +150,10 @@ $(() => {
         createDeck();
         shuffleCards(deck);
         console.log(deck);
-        for (let i = 0; i < 2; i++) {
-            cardsDealtPlayer.push(deck[0]);
-            deck.shift();
-            cardsDealtDealer.push(deck[0]);
-            deck.shift();
-        }
-        console.log(cardsDealtDealer);
-        console.log(cardsDealtPlayer);
-
-        //sum points dealt
-        dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
-        playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
-        console.log(dealerPointTotal);
-        console.log(playerPointTotal);
-
+        dealCards();
+        sumPoints();
     })
 
-    // 2. Sum cards dealt
 
     //3. Add event listener to "Hit"
     $("#hit-button").on("click", ($event) => {
