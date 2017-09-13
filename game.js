@@ -190,26 +190,38 @@ $(() => {
     //dealer > player - dealer wins
 
     function determineWinner() {
-        if (dealerPointTotal === 21) {
-            console.log("dealer has blackjack");
-        }
-        if (playerPointTotal === 21) {
-            console.log("player has blackjack");
-        }
         if (dealerPointTotal > 21) {
             console.log("dealer busted");
+            alert("Dealer has busted.")
         }
         if (playerPointTotal > 21) {
             console.log("player busted");
+            alert("You have busted. I'm sorry.");
         }
-        if (playerPointTotal > dealerPointTotal) {
+        if (dealerPointTotal === 21 && playerPointTotal === 21) {
+            console.log ("player and dealer both have 21. game tied.");
+            alert("Congrats, you got 21 points, but....so did the dealer. The game's a tie.")
+        }
+        else if (dealerPointTotal === 21) {
+            console.log("dealer has blackjack");
+            alert("I'm sorry, The dealer has 21 points and has won the game.")
+        }
+        else if (playerPointTotal === 21) {
+            console.log("player has blackjack");
+            alert("YAHOO! You have 21 points and have won!");
+        }
+        else if (playerPointTotal > dealerPointTotal) {
             console.log("player won");
+            alert("LA DEE DA! YOU WON BLACKJACK!")
         }
-        if (dealerPointTotal > playerPointTotal) {
+        else if (dealerPointTotal > playerPointTotal) {
             console.log("dealer won");
+            alert("Sorry, chickadee. The dealer betcha.");
+
         }
-        if (dealerPointTotal === playerPointTotal) {
+        else if (dealerPointTotal === playerPointTotal) {
             console.log("dealer and player tied");
+            alert("Well this is anticlimactic. The game's a tie.")
         }
     }
 
