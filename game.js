@@ -11,6 +11,7 @@ $(() => {
 
     //GAME SETUP PORTION
 
+
     //1. Create card deck
     //create array of suits
 
@@ -137,14 +138,25 @@ $(() => {
         console.log(playerPointTotal);
     }
 
+    //9. HIT button
+    function hitButton() {
+        cardsDealtPlayer.push(deck[0]);
+        deck.shift();
+        console.log(cardsDealtPlayer);
+    }
+
+    //10. STAY button
+    function stayButton() {
+        console.log(cardsDealtPlayer);        
+    }
+
 
     // USER INTERFACE PORTION OF CODE
 
-    //1. Deal cards
+    //1. DEAL BUTTON - create deck, shuffle cards, deal cards and sum point toatl when DEAL button is clicked
     let dealerPointTotal;
     let playerPointTotal;
 
-    //add event listener - when "deal" is clicked, create deck, shuffle cards, and then deal cards
     $("#deal-button").on("click", ($event) => {
         $event.stopPropagation();
         createDeck();
@@ -154,22 +166,21 @@ $(() => {
         sumPoints();
     })
 
-
-    //3. Add event listener to "Hit"
+    //2. HIT BUTTON - deal another card 
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
-        cardsDealtPlayer.push(deck[0]);
-        deck.shift();
-        console.log(cardsDealtPlayer);
+        hitButton();
+  
+        // cardsDealtPlayer.push(deck[0]);
+        // deck.shift();
+        // console.log(cardsDealtPlayer);
     })
 
     //4. Add event listener to "Stay"
     $("#stay-button").on("click", ($event) => {
         $event.stopPropagation();
-        console.log(cardsDealtPlayer);
+        stayButton();
     })
-
-
 
     // 5 and 6. Determine whether dealer will "hit" or "stay"
    
