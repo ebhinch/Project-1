@@ -12,7 +12,7 @@ $(() => {
     const suits = ["Spades", "Hearts", "Diamonds", "Clubs"];
 
     //2. Ceate array of card values
-    const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+    const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
 
     //3. Create empty card deck array to hold deck of cards
     let deck = [];
@@ -28,12 +28,12 @@ $(() => {
                 //set jack, queen and king to 10 points
                 // define "points" variable as the point value of each card
                 let points = parseInt(values[i]);
-                if (values[i] === "J" || values[i] === "Q" || values[i] === "K") {
+                if (values[i] === "Jack" || values[i] === "Queen" || values[i] === "King") {
                     points = 10;
                 }
 
                 //set ace to 11 points
-                else if (values[i] === "A") {
+                else if (values[i] === "Ace") {
                     points = 11;
                 }
 
@@ -43,6 +43,7 @@ $(() => {
                 };
 
                 //push value, suit and points to an array now comprising entire deck of cards
+                //drop cardImageSource into source using interpolation
                 let card = {
                     value: values[i],
                     suit: suits[j],
@@ -125,6 +126,22 @@ $(() => {
         }
     }
 
+    //10. Check for Bust
+    function bustCheck() {
+        if (playerPointTotal > 21 && dealerPointTotal > 21) {
+            console.log("player and dealer bust");
+            alert("Uh oh. You and the dealer both busted.");
+        }
+        else if (playerPointTotal > 21) {
+            console.log("player bust");
+            alert("Uh oh, player. You were dealt a bust. Dealer wins.");
+        }
+        else if (dealerPointTotal > 21) {
+            console.log("dealer bust");
+            alert("The dealer was dealt bust. Player wins.")
+        }
+    }
+
     //10. HIT button
     function hitButton() {
         cardsDealtPlayer.push(deck[0]);
@@ -156,14 +173,15 @@ $(() => {
             console.log("player and dealer busted");
             alert("Uh oh. You and the dealer both busted.");
         }
-        else if (dealerPointTotal > 21) {
+        else if (dealerPointTotal > 21 && playerPointTotal <= 21) {
             console.log("dealer busted");
-            alert("Dealer has busted.")
+            alert("Lucky duck. The dealer has busted, and you have won.")
         }
-        else if (playerPointTotal > 21) {
+        else if (playerPointTotal > 21 && dealerPointTotal <= 21) {
             console.log("player busted");
-            alert("You have busted. I'm sorry.");
+            alert("I'm sorry. You have busted, and the dealer has won.");
         }
+
         else if (dealerPointTotal === 21 && playerPointTotal === 21) {
             console.log("player and dealer both have 21. game tied.");
             alert("Congrats, you got 21 points, but....so did the dealer. The game's a tie.")
@@ -192,10 +210,14 @@ $(() => {
     }
 
     //Card Image Appearance 
-    function showCard(source) {
+    function showPlayerCard(source) {
+        for (let i = 0; i<2; i++) {
+            const cardToShow = deck[i];
+            const $newCard = $("<div></div>");
+            $("#player-jumbotron").append(`<img src=${deck[i].cardImageSource}>`);
+        }
+    };
 
-    }
-    
     // USER INTERFACE PORTION OF CODE
 
     //1. DEAL BUTTON - create deck, shuffle cards, deal cards and sum point toatl when DEAL button is clicked
@@ -203,21 +225,26 @@ $(() => {
     let playerPointTotal;
 
     $("#deal-button").on("click", ($event) => {
+        console.log(deck)
         $event.stopPropagation();
         createDeck();
         shuffleCards(deck);
         console.log(deck);
         dealCards();
-        //show card dealt
-        sumDealerPoints();
+        showPlayerCard();
         sumPlayerPoints();
+        // showDealerCard();
+        sumDealerPoints();
         blackjackCheck();
+        bustCheck();
     })
 
     //2. HIT BUTTON - deal another card 
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
         hitButton();
+        showPlayerCard();
+        // showDealerCard();
     })
 
     //3. STAY BUTTON - just console.log current hand
