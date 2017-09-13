@@ -1,13 +1,8 @@
 $(() => {
     //Write a BlackJack game to try to beat the dealer. Allow the user to "Hit" or "Stand" based on their current score. Follow the common rules for BlackJack.
 
-    // Age Check
-    //minimum age is 21 years old
-    const minimumAge = {
-        ageCheck: function () {
 
-        }
-    };
+  
 
     //GAME SETUP PORTION
 
@@ -84,7 +79,6 @@ $(() => {
         }
     }
 
-
     //6. Create players
 
     //create player array to save player ID and track respective player score and cards currently dealt
@@ -131,10 +125,18 @@ $(() => {
     }
 
     //8. Sum Point Totals
-    function sumPoints() {
-        dealerPointTotal = cardsDealtDealer[0].points + cardsDealtDealer[1].points;
-        playerPointTotal = cardsDealtPlayer[0].points + cardsDealtPlayer[1].points;
+    let cardParameter;
+    function sumDealerPoints() {
+        dealerPointTotal = cardsDealtDealer.reduce((pointTotal, cardParameter) => {
+            return pointTotal + cardParameter.points;
+        }, 0);
         console.log(dealerPointTotal);
+    }
+    
+    function sumPlayerPoints() {
+        playerPointTotal = cardsDealtPlayer.reduce((pointTotal, cardParameter)=> {
+            return pointTotal + cardParameter.points;
+        }, 0);
         console.log(playerPointTotal);
     }
 
@@ -142,6 +144,7 @@ $(() => {
     function hitButton() {
         cardsDealtPlayer.push(deck[0]);
         deck.shift();
+        sumPlayerPoints();
         console.log(cardsDealtPlayer);
     }
 
@@ -150,6 +153,7 @@ $(() => {
         console.log(cardsDealtPlayer);        
     }
 
+    //11. Dealer Turns
 
     // USER INTERFACE PORTION OF CODE
 
@@ -163,7 +167,8 @@ $(() => {
         shuffleCards(deck);
         console.log(deck);
         dealCards();
-        sumPoints();
+        sumDealerPoints();
+        sumPlayerPoints();
     })
 
     //2. HIT BUTTON - deal another card 
@@ -176,13 +181,14 @@ $(() => {
         // console.log(cardsDealtPlayer);
     })
 
-    //4. Add event listener to "Stay"
+    //3. STAY BUTTON - just console.log current hand
     $("#stay-button").on("click", ($event) => {
         $event.stopPropagation();
         stayButton();
+        // add in dealer's turns
     })
 
-    // 5 and 6. Determine whether dealer will "hit" or "stay"
+    //4. DEALER HIT / STAY LOGIC
    
     if (dealerPointTotal <= 11) {
         //hit
@@ -192,7 +198,7 @@ $(() => {
         //stay
     }
 
-    //7. evaluate winner 
+    //5. EVALUATE WINNER
 
 
     //alert player has won
