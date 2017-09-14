@@ -68,7 +68,7 @@ a:hover {
 }
 
 .jumbotron{
-    height: 350px;
+    height: 325px;
     background-image: url("https://t3.ftcdn.net/jpg/01/24/53/40/240_F_124534065_ww9OXMx183M5wQ85WNQ0rnLyXvsQMg19.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -91,10 +91,10 @@ a:hover {
 #ageWall {
     position: fixed;
     background-color: grey;
-    opacity: .8;
+    opacity: .9;
     min-height: 100vh;
     min-width: 100vw;
-    padding: 250px;
+    padding: 300px;
 }
 
 #age-message-text {

@@ -159,6 +159,7 @@ $(() => {
     function dealerTurns() {
         while (dealerPointTotal < 17) {
             cardsDealtDealer.push(deck[0]);
+            document.getElementById("deal").play();            
             deck.shift();
             showDealerCardHit();
             sumDealerPoints();
@@ -268,7 +269,7 @@ $(() => {
 
     $("#deal-button").on("click", ($event) => {
         $("#deal-button").prop ("disabled", true);
-        console.log(deck)
+        console.log(deck);
         $event.stopPropagation();
         createDeck();
         shuffleCards(deck);
@@ -280,12 +281,15 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
+        document.getElementById("beep").play();
+
     })
 
 
     //2. HIT BUTTON - deal another card 
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
+        document.getElementById("deal").play();        
         hitButton();
         showPlayerCardHit();
         blackjackCheck();
