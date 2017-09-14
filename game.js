@@ -239,7 +239,7 @@ $(() => {
 
     //dealer hit
     function showDealerCardHit(source) {
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
             const cardToShow = cardsDealtDealer[i];
             const $newCard = $("<div></div>");
             $("#dealer-jumbotron").append(`<img class="dealerCard" src=${cardsDealtDealer[cardsDealtDealer.length - 1].cardImageSource}>`);
@@ -282,7 +282,6 @@ $(() => {
     })
 
 
-
     //2. HIT BUTTON - deal another card 
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
@@ -302,16 +301,16 @@ $(() => {
         determineWinner();
     })
 
-    //MAKE POP UP APPEAR
+    //4. BUILD AGE VERIFICATION WALL
     $("#ageWall").prependTo($("body"));
 
-    //POPUP ANSWER NO
+    //4A. RUN AGE WALL NO BUTTON
     $("#ageNo").on("click", ($event) => {
         $event.stopPropagation();
         tooYoung();
     })
 
-    //POPUP ANSWER YES
+    //4B. RUN AGE WALL YES BUTTON
     $("#ageYes").on("click", ($event) => {
         $event.stopPropagation();
         oldEnough();

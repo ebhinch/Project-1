@@ -99,7 +99,7 @@ a:hover {
 
 }
 
-#button-div {
+#age-message-text, #button-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
