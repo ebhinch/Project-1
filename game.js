@@ -209,7 +209,7 @@ $(() => {
         }
     }
 
-    //Card Image Appearance 
+    //14. Card Image Appearance 
     //player deal button
     function showPlayerCardDeal(source) {
         for (let i = 0; i < 2; i++) {
@@ -246,7 +246,15 @@ $(() => {
         }
     };
 
+    //age popup too young
+    function tooYoung() {
+        alert("We're sorry. You must be at least 21 years old to play Brooks' Blackjack. Please come back when you're of age.");
+    }
 
+    //age popup too old
+    function oldEnough() {
+        alert("Welcome to Brooks' Blackjack. Let's get this game underway!");
+    }
 
 
     // USER INTERFACE PORTION OF CODE
@@ -292,5 +300,23 @@ $(() => {
         determineWinner();
     })
 
+    //MAKE POP UP APPEAR
+    $("#ageWall").prependTo($("body"));
+
+    //POPUP ANSWER NO
+    $("#ageNo").on("click", ($event) => {
+        $event.stopPropagation();
+        tooYoung();
+    })
+
+    //POPUP ANSWER YES
+    $("#ageYes").on("click", ($event) => {
+        $event.stopPropagation();
+        oldEnough();
+    })
+
+
 
 })
+
+
