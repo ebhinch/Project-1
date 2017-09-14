@@ -114,15 +114,15 @@ $(() => {
     function blackjackCheck() {
         if (playerPointTotal === 21 && dealerPointTotal === 21) {
             console.log("player and dealer got blackjack");
-            window.alert("The game is a tie! You and the dealer both got Blackjack.")
+            setTimeout(function(){ alert("The game is a tie! You and the dealer both got Blackjack."); }, 1000);
         }
         else if (playerPointTotal === 21) {
             console.log("player got blackjack");
-            window.alert("Congratulations! You have Blackjack and have beat the dealer!");
+            setTimeout(function(){ alert("Congratulations! You have Blackjack and have beat the dealer!"); }, 1000);
         }
         else if (dealerPointTotal === 21) {
             console.log("dealer got blackjack");
-            window.alert("I'm sorry! The dealer has Blackjack. You've lost the game.")
+            setTimeout(function(){ alert("I'm sorry! The dealer has Blackjack. You've lost the game."); }, 1000);
         }
     }
 
@@ -130,15 +130,15 @@ $(() => {
     function bustCheck() {
         if (playerPointTotal > 21 && dealerPointTotal > 21) {
             console.log("player and dealer bust");
-            alert("Uh oh. You and the dealer both busted.");
+            setTimeout(function(){ alert("Uh oh. You and the dealer both busted."); }, 1000);
         }
         else if (playerPointTotal > 21) {
             console.log("player bust");
-            alert("Uh oh, player. You were dealt a bust. Dealer wins.");
+            setTimeout(function(){ alert("Uh oh, player. You were dealt a bust. Dealer wins."); }, 1000);
         }
         else if (dealerPointTotal > 21) {
             console.log("dealer bust");
-            alert("The dealer was dealt bust. Player wins.")
+            setTimeout(function(){ alert("The dealer was dealt bust. Player wins."); }, 1000);
         }
     }
 
@@ -164,8 +164,6 @@ $(() => {
             sumDealerPoints();
             console.log("These are the dealer cards " + cardsDealtDealer);
             console.log(dealerPointTotal);
-
-
         }
     }
 
@@ -173,36 +171,36 @@ $(() => {
     function determineWinner() {
         if (dealerPointTotal > 21 && playerPointTotal > 21) {
             console.log("player and dealer busted");
-            alert("Uh oh. You and the dealer both busted.");
+            setTimeout(function(){ alert("Uh oh. You and the dealer both busted."); }, 1000);
         }
         else if (dealerPointTotal > 21 && playerPointTotal <= 21) {
             console.log("dealer busted");
-            alert("Lucky duck. The dealer has busted, and you have won.")
+            setTimeout(function(){ alert("Lucky duck. The dealer has busted, and you have won."); }, 1000);
         }
         else if (playerPointTotal > 21 && dealerPointTotal <= 21) {
             console.log("player busted");
-            alert("I'm sorry. You have busted, and the dealer has won.");
+            setTimeout(function(){ alert("I'm sorry. You have busted, and the dealer has won."); }, 1000);
         }
 
         else if (dealerPointTotal === 21 && playerPointTotal === 21) {
             console.log("player and dealer both have 21. game tied.");
-            alert("Congrats, you got 21 points, but....so did the dealer. The game's a tie.")
+            setTimeout(function(){ alert("Congrats, you got 21 points, but....so did the dealer. The game's a tie."); }, 1000);
         }
         else if (dealerPointTotal === 21) {
             console.log("dealer has blackjack");
-            alert("I'm sorry, The dealer has 21 points and has won the game.")
+            setTimeout(function(){ alert("I'm sorry, The dealer has 21 points and has won the game."); }, 1000);
         }
         else if (playerPointTotal === 21) {
             console.log("player has blackjack");
-            alert("YAHOO! You have 21 points and have won!");
+            setTimeout(function(){ alert("YAHOO! You have 21 points and have won!"); }, 1000);
         }
         else if (playerPointTotal > dealerPointTotal) {
             console.log("player won");
-            alert("LA DEE DA! YOU WON BLACKJACK!")
+            setTimeout(function(){  alert("LA DEE DA! YOU WON BLACKJACK!"); }, 1000);
         }
         else if (dealerPointTotal > playerPointTotal) {
             console.log("dealer won");
-            alert("Sorry, chickadee. The dealer beatcha.");
+            setTimeout(function(){ alert("Sorry, chickadee. The dealer beatcha."); }, 1000);
 
         }
         else if (dealerPointTotal === playerPointTotal) {
@@ -258,6 +256,7 @@ $(() => {
     let playerPointTotal;
 
     $("#deal-button").on("click", ($event) => {
+        $("#deal-button").prop ("disabled", true);
         console.log(deck)
         $event.stopPropagation();
         createDeck();
@@ -272,16 +271,21 @@ $(() => {
         bustCheck();
     })
 
+
+
     //2. HIT BUTTON - deal another card 
     $("#hit-button").on("click", ($event) => {
         $event.stopPropagation();
         hitButton();
         showPlayerCardHit();
+        blackjackCheck();
+        bustCheck();
         // showDealerCard();
     })
 
     //3. STAY BUTTON - just console.log current hand
     $("#stay-button").on("click", ($event) => {
+        $("#stay-button").prop("disabled", true);
         $event.stopPropagation();
         stayButton();
         dealerTurns();

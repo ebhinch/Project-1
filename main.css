@@ -5,9 +5,7 @@ h1, h2, h3 {
 }
 
 #head-section {
-    background-image: url("https://st2.depositphotos.com/1371034/9707/v/950/depositphotos_97077682-stock-illustration-seamless-pattern-of-playing-card.jpg");
-    background-size: 400px;
-    padding: 25px;
+    border: 5px groove green;
     }
 
 h1{
@@ -44,9 +42,8 @@ footer {
     font-size: 18px;
     font-family: "Palatino", Georgia, Serif;
     text-align: center;
-    background-image: url("https://st2.depositphotos.com/1371034/9707/v/950/depositphotos_97077682-stock-illustration-seamless-pattern-of-playing-card.jpg");
-    background-size: 400px;
-    padding: 25px;
+    border: 5px groove green;
+    padding: 10px;
 }
 
 a {
@@ -55,7 +52,7 @@ a {
 }
 
 a:hover {
-    color: red;
+    color: green;
 }
 
 .game-play {
@@ -64,7 +61,10 @@ a:hover {
 
 .jumbotron{
     height: 350px;
-    background-color: green;
+    background-image: url("https://t3.ftcdn.net/jpg/01/24/53/40/240_F_124534065_ww9OXMx183M5wQ85WNQ0rnLyXvsQMg19.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1011px;
     margin: 10px;
 }
 
