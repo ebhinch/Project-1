@@ -118,7 +118,8 @@ $(() => {
         }
         else if (playerPointTotal === 21) {
             console.log("player got blackjack");
-            setTimeout(function(){ alert("Congratulations! You have Blackjack and have beat the dealer!"); }, 1000);
+            setTimeout(function(){ alert("Congratulations! You have Blackjack and have beat the dealer!"); }, 400);
+            setTimeout(function() {document.getElementById("win").play(); }, 500);
         }
         else if (dealerPointTotal === 21) {
             console.log("dealer got blackjack");
@@ -176,7 +177,9 @@ $(() => {
         }
         else if (dealerPointTotal > 21 && playerPointTotal <= 21) {
             console.log("dealer busted");
-            setTimeout(function(){ alert("Lucky duck. The dealer has busted, and you have won."); }, 1000);
+            setTimeout(function(){ alert("Lucky duck. The dealer has busted, and you have won."); }, 400);
+            setTimeout(function() {document.getElementById("win").play(); }, 500);
+            
         }
         else if (playerPointTotal > 21 && dealerPointTotal <= 21) {
             console.log("player busted");
@@ -193,11 +196,15 @@ $(() => {
         }
         else if (playerPointTotal === 21) {
             console.log("player has blackjack");
-            setTimeout(function(){ alert("YAHOO! You have 21 points and have won!"); }, 1000);
+            setTimeout(function(){ alert("YAHOO! You have 21 points and have won!"); }, 400);
+            setTimeout(function() {document.getElementById("win").play(); }, 500);
+            
         }
         else if (playerPointTotal > dealerPointTotal) {
             console.log("player won");
-            setTimeout(function(){  alert("LA DEE DA! YOU WON BLACKJACK!"); }, 1000);
+            setTimeout(function(){  alert("LA DEE DA! YOU WON BLACKJACK!"); }, 400);
+            setTimeout(function() {document.getElementById("win").play(); }, 500);
+            
         }
         else if (dealerPointTotal > playerPointTotal) {
             console.log("dealer won");
@@ -269,6 +276,7 @@ $(() => {
 
     $("#deal-button").on("click", ($event) => {
         $("#deal-button").prop ("disabled", true);
+        document.getElementById("beep").play();        
         console.log(deck);
         $event.stopPropagation();
         createDeck();
@@ -281,8 +289,6 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
-        document.getElementById("beep").play();
-
     })
 
 
