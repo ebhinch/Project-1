@@ -29,7 +29,6 @@ h4 {
     display: flex;
     justify-content: center;
     margin: 10px;
-    font-size: 20px;
 }
 
 main {
@@ -77,4 +76,31 @@ a:hover {
 .playerCard, .dealerCard {
     height: 150px;
     margin: 10px;
+}
+
+#ageWall {
+    position: fixed;
+    background-color: grey;
+    opacity: .8;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 250px;
+}
+
+#age-message-text {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+}
+
+.ageButton {
+    margin: 10px;
+    padding: 10px;
+
+}
+
+#button-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

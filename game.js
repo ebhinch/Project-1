@@ -253,7 +253,9 @@ $(() => {
 
     //age popup too old
     function oldEnough() {
+        $("#ageWall").remove();
         alert("Welcome to Brooks' Blackjack. Let's get this game underway!");
+
     }
 
 
