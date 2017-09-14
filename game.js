@@ -134,11 +134,11 @@ $(() => {
         }
         else if (playerPointTotal > 21) {
             console.log("player bust");
-            setTimeout(function(){ alert("Uh oh, player. You were dealt a bust. Dealer wins."); }, 1000);
+            setTimeout(function(){ alert("Uh oh, player. You've gone bust. Dealer wins."); }, 1000);
         }
         else if (dealerPointTotal > 21) {
             console.log("dealer bust");
-            setTimeout(function(){ alert("The dealer was dealt bust. Player wins."); }, 1000);
+            setTimeout(function(){ alert("The dealer's gone bust. Player wins."); }, 1000);
         }
     }
 
@@ -205,7 +205,7 @@ $(() => {
         }
         else if (dealerPointTotal === playerPointTotal) {
             console.log("dealer and player tied");
-            alert("Well this is anticlimactic. The game's a tie.")
+            setTimeout(function(){alert("Well this is anticlimactic. The game's a tie.");}, 1000);
         }
     }
 
@@ -228,7 +228,8 @@ $(() => {
         }
     };
 
-    //dealer deal 
+   
+    //dealer deal card 1
     function showDealerCardDeal(source) {
         for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtDealer[i];
@@ -299,6 +300,8 @@ $(() => {
         stayButton();
         dealerTurns();
         determineWinner();
+        //delete back of card
+        //make hidden card visible
     })
 
     //4. BUILD AGE VERIFICATION WALL
@@ -318,5 +321,7 @@ $(() => {
 
 
 })
+
+
 
 
