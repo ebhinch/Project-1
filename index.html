@@ -20,32 +20,43 @@
 
 </head>
 
+
 <body>
     <!-- AGE VERIFICATION POPUP -->
     <main>
         <div id="ageWall">
-                <h3 id="age-message-text">Are you at least 21 years of age?</h3>
-                <div id="button-div"> 
-                    <input type="button" class="ageButton" id="ageYes" value="YES I AM! I CAN DRINK TOO!">
-                     <input type="button" class="ageButton" id="ageNo" value="NO. WHY DO YOU HAVE TO BE 21 TO HAVE ALL THE FUN?">
-                </div>
+            <h3 id="age-message-text">Are you at least 21 years of age?</h3>
+            <div id="button-div">
+                <input type="button" class="ageButton" id="ageYes" value="YES I AM! I CAN DRINK TOO!">
+                <input type="button" class="ageButton" id="ageNo" value="NO. WHY DO YOU HAVE TO BE 21 TO HAVE ALL THE FUN?">
             </div>
+        </div>
 
         <div id="head-section">
-            <br>
             <h1>Brooks' Blackjack</h1>
+            <h2>Think you can beat the house? Let's find out!</h2>
             <hr>
-            <br>
-            <div class="deal-button-container">
-                <input type="button" id="deal-button" value="DEAL">
+            <div id="rule-panel">
+                <h3 id="rule-header">Every game's got rules. Here are Blackjack's:</h3> 
+
+                <ol id = "rule-list">
+                <li>The basic goal in any Blackjack, or 21, game is score 21 points, or as close to 21 as possible, wihtout going over.</li> 
+                <li>Once your score has exceeded 21, you've "busted," and your turn is over.</li>
+                <li>Whomever has the higher score, under 22, is the winner.</li>
+                <li>In the event both the player and dealer have the same score, the game ends in a tie.</li>
+                <li>All numbered cards' point values are their face values. Jacks, Kings and Queens are each worth 10 points, and Aces are worth 11.</li> 
+                </ol>
             </div>
+            <br>
         </div>
-        <div id="instructions">
-            <h3></h3>
-        </div>
+
     </main>
 
-    <hr>
+    <div class="deal-button-container">
+        <br>
+        <input type="button" id="deal-button" value="DEAL">
+        <br>
+    </div>
 
     <!-- create dealer game board -->
     <div class="jumbotron" id="dealer-jumbotron">
@@ -69,8 +80,8 @@
 
     <!-- create footer -->
     <footer id="footer-id">
-        <hr>
         <a href="http://www.bicyclecards.com/how-to-play/blackjack/" target="_blank">Feeling rusty? Brush up on your Blackjack strategy!</a>
+        <hr>
     </footer>
 
 
@@ -81,8 +92,5 @@
     <!-- link JS -->
     <script src='game.js'></script>
 </body>
+<script>
 
-
-
-
- <script>

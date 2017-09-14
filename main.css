@@ -22,7 +22,8 @@ h3 {
 
 h4 {
     text-align: left;
-    padding-left: 10px;    
+    padding-left: 10px;  
+    font-size: 20px;  
 }
 
 .deal-button-container {
@@ -31,18 +32,23 @@ h4 {
     margin: 10px;
 }
 
+#deal-button {
+    color: blue;
+    font-size: 20px;
+}
+
 main {
     padding: 10px;
 }
 
 footer {
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 95px;
     font-size: 18px;
     font-family: "Palatino", Georgia, Serif;
     text-align: center;
     border: 5px groove green;
-    padding: 10px;
+    padding: 20px;
 }
 
 a {
@@ -63,8 +69,9 @@ a:hover {
     background-image: url("https://t3.ftcdn.net/jpg/01/24/53/40/240_F_124534065_ww9OXMx183M5wQ85WNQ0rnLyXvsQMg19.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 1011px;
+    width: 100vw;
     margin: 10px;
+    padding: 25px;
 }
 
 #hit-button, #stay-button{
@@ -103,4 +110,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#entire-background{
+    background-image: url("https://t4.ftcdn.net/jpg/01/00/19/61/240_F_100196121_Ers4AL9Rf1pr8ugbZWkifpKR83TiUFKZ.jpg");
 }
