@@ -268,8 +268,10 @@ $(() => {
 
     }
 
-    // //16. SCOREBOARD UPDATE FUNCTION 
-    // // write function that'll update scoreboard each time score changes
+    //16. SCOREBOARD UPDATE FUNCTION 
+    // write function that'll update scoreboard each time score changes
+    //have this remove and then append 
+    //or use +=
 
     // // Player Scoreboard Update
     // function updatePlayerScore() {
