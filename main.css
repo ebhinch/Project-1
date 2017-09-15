@@ -68,13 +68,11 @@ a:hover {
 }
 
 .jumbotron{
-    height: 325px;
+    height: 350px;
     background-image: url("https://t3.ftcdn.net/jpg/01/24/53/40/240_F_124534065_ww9OXMx183M5wQ85WNQ0rnLyXvsQMg19.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     width: auto;
-    margin: 10px;
-    padding: 25px;
 }
 
 #hit-button, #stay-button{
@@ -94,7 +92,7 @@ a:hover {
     opacity: .9;
     min-height: 100vh;
     min-width: 100vw;
-    padding: 300px;
+    padding: 10%;
 }
 
 #age-message-text {
