@@ -71,7 +71,7 @@ a:hover {
     height: 325px;
     background-image: url("https://t3.ftcdn.net/jpg/01/24/53/40/240_F_124534065_ww9OXMx183M5wQ85WNQ0rnLyXvsQMg19.jpg");
     background-repeat: no-repeat;
-    background-size: 1190px;
+    background-size: 100%;
     width: auto;
     margin: 10px;
     padding: 25px;
@@ -122,5 +122,7 @@ body{
 
 .scoreboard{
     border: 5px groove green;
+    width: 600px;
+    height: 200px;
 
 }
