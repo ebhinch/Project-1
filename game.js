@@ -325,8 +325,9 @@ $(() => {
 
     //4B. RUN AGE WALL YES BUTTON
     $("#ageYes").on("click", ($event) => {
+        document.getElementById("beep").play();                
         $event.stopPropagation();
-        oldEnough();
+        oldEnough();        
     })
 
 
