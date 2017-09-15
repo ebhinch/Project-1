@@ -41,7 +41,7 @@ h4 {
 }
 
 main {
-    padding: 10px;
+    padding-top: 5px;
 }
 
 footer {
@@ -115,6 +115,8 @@ a:hover {
 
 body{
     background-image: linear-gradient(45deg, white, green);
+    padding-right: 10px;
+    padding-left: 10px;
  
 }
 
