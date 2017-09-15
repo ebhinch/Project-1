@@ -39,7 +39,7 @@ $(() => {
 
                 //set all other cards to their face value
                 else {
-                    points = values[i]
+                    points = values[i];
                 };
 
                 //push value, suit and points to an array now comprising entire deck of cards
@@ -218,7 +218,7 @@ $(() => {
     }
 
     //14. Card Image Appearance 
-    //player deal button
+    //14A. player deal button
     function showPlayerCardDeal(source) {
         for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtPlayer[i];
@@ -227,7 +227,7 @@ $(() => {
         }
     };
 
-    //player hit button 
+    //14B. player hit button 
     function showPlayerCardHit(source) {
         for (let i = 0; i < 1; i++) {
             const cardToShow = cardsDealtPlayer[i];
@@ -236,8 +236,7 @@ $(() => {
         }
     };
 
-   
-    //dealer deal card 1
+    //14C. dealer deal
     function showDealerCardDeal(source) {
         for (let i = 0; i < 2; i++) {
             const cardToShow = cardsDealtDealer[i];
@@ -246,7 +245,7 @@ $(() => {
         }
     };
 
-    //dealer hit
+    //14D. dealer hit
     function showDealerCardHit(source) {
         for (let i = 0; i < 1; i++) {
             const cardToShow = cardsDealtDealer[i];
@@ -255,17 +254,31 @@ $(() => {
         }
     };
 
-    //age popup too young
+    //15. AGE WALL POPUPS
+    //15A. age popup too young
     function tooYoung() {
         alert("We're sorry. You must be at least 21 years old to play Brooks' Blackjack. Please come back when you're of age.");
     }
 
-    //age popup too old
+    //15B. age popup too old
     function oldEnough() {
         $("#ageWall").remove();
         alert("Welcome to Brooks' Blackjack. Let's get this game underway!");
 
     }
+
+    //16. SCOREBOARD UPDATE FUNCTION 
+    // write function that'll update scoreboard each time score changes
+
+    //Player Scoreboard Update
+    // function updatePlayerScore() {
+    //     $("#scoreboard").append(playerPointTotal);
+    // }
+
+    // //Dealer Scoreboard Update
+    // function updateDealerScore() {
+    //     $("#scoreboard").append(dealerPointTotal);
+    // }
 
 
     // USER INTERFACE PORTION OF CODE
@@ -289,6 +302,8 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
+        // updatePlayerScore();
+        // updateDealerScore();
     })
 
 
@@ -300,6 +315,8 @@ $(() => {
         showPlayerCardHit();
         blackjackCheck();
         bustCheck();
+        // updatePlayerScore();
+        // updateDealerScore();
         // showDealerCard();
     })
 
@@ -310,8 +327,9 @@ $(() => {
         stayButton();
         dealerTurns();
         determineWinner();
-        //delete back of card
-        //make hidden card visible
+        // updatePlayerScore();
+        // updateDealerScore();
+
     })
 
     //4. BUILD AGE VERIFICATION WALL
