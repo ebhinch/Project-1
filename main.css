@@ -130,7 +130,7 @@ body{
     width: 600px;
     height: 100px;
     border: 5px groove green;
-}
+} */
 
 #dealer-score-text{
     font-size: 14px;
@@ -149,4 +149,4 @@ body{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;   
-} */
+}

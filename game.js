@@ -94,6 +94,7 @@ $(() => {
 
     //8. Sum Point Totals
     // let cardParameter;
+    //MAYBE MOVE APPEND SCORE TO SCOREBOARD CODE HERE
 
     // dealer
     function sumDealerPoints() {
@@ -267,17 +268,17 @@ $(() => {
 
     }
 
-    //16. SCOREBOARD UPDATE FUNCTION 
-    // write function that'll update scoreboard each time score changes
+    // //16. SCOREBOARD UPDATE FUNCTION 
+    // // write function that'll update scoreboard each time score changes
 
-    //Player Scoreboard Update
+    // // Player Scoreboard Update
     // function updatePlayerScore() {
-    //     $("#scoreboard").append(playerPointTotal);
+    //     $("#player-score-text").append(playerPointTotal);
     // }
 
     // //Dealer Scoreboard Update
     // function updateDealerScore() {
-    //     $("#scoreboard").append(dealerPointTotal);
+    //     $("#dealer-score-text").append(dealerPointTotal);
     // }
 
 
@@ -317,7 +318,7 @@ $(() => {
         bustCheck();
         // updatePlayerScore();
         // updateDealerScore();
-        // showDealerCard();
+        showDealerCard();
     })
 
     //3. STAY BUTTON - just console.log current hand
