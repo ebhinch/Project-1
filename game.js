@@ -273,15 +273,15 @@ $(() => {
     //have this remove and then append 
     //or use +=
 
-    // // Player Scoreboard Update
     // function updatePlayerScore() {
     //     $("#player-score-text").append(playerPointTotal);
     // }
 
-    // //Dealer Scoreboard Update
+    // // //Dealer Scoreboard Update
     // function updateDealerScore() {
     //     $("#dealer-score-text").append(dealerPointTotal);
     // }
+
 
 
     // USER INTERFACE PORTION OF CODE
@@ -305,8 +305,8 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
-        // updatePlayerScore();
-        // updateDealerScore();
+        updatePlayerScore();
+        updateDealerScore();
     })
 
 
@@ -318,8 +318,8 @@ $(() => {
         showPlayerCardHit();
         blackjackCheck();
         bustCheck();
-        // updatePlayerScore();
-        // updateDealerScore();
+        updatePlayerScore();
+        updateDealerScore();
         showDealerCard();
     })
 
@@ -330,8 +330,8 @@ $(() => {
         stayButton();
         dealerTurns();
         determineWinner();
-        // updatePlayerScore();
-        // updateDealerScore();
+        updatePlayerScore();
+        updateDealerScore();
 
     })
 
