@@ -93,7 +93,8 @@ $(() => {
     }
 
     //8. Sum Point Totals
-  
+    // let cardParameter;
+    //MAYBE MOVE APPEND SCORE TO SCOREBOARD CODE HERE
 
     // dealer
     function sumDealerPoints() {
@@ -267,6 +268,7 @@ $(() => {
 
     }
 
+
     // USER INTERFACE PORTION OF CODE
 
     //1. DEAL BUTTON - create deck, shuffle cards, deal cards and sum point toatl when DEAL button is clicked
@@ -288,6 +290,7 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
+    
     })
 
 
@@ -309,6 +312,8 @@ $(() => {
         stayButton();
         dealerTurns();
         determineWinner();
+
+
     })
 
     //4. BUILD AGE VERIFICATION WALL
