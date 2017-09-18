@@ -125,12 +125,15 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    margin-block-end: 10px;
 }
 
 #scoreboard{
     width: 600px;
     height: 150px;
     border: 5px groove green;
+    margin-bottom: 10px;
 }
 
 #dealer-score-text{
