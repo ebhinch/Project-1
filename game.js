@@ -290,7 +290,6 @@ $(() => {
         sumDealerPoints();
         blackjackCheck();
         bustCheck();
-    
     })
 
 
@@ -312,8 +311,6 @@ $(() => {
         stayButton();
         dealerTurns();
         determineWinner();
-
-
     })
 
     //4. BUILD AGE VERIFICATION WALL
